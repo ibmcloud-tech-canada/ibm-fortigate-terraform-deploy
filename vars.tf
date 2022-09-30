@@ -17,6 +17,11 @@ variable "region" {
 
 }
 
+variable "resource_group_name" {
+  type        = string
+  description = "Resource group into which to provision resources"
+}
+
 // IBM availability zones
 variable "zone1" {
   type        = string

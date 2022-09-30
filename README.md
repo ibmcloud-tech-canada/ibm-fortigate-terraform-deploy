@@ -28,6 +28,7 @@ Terraform deploys the following components:
 
  ![IBM FortiGate Deploy](https://raw.githubusercontent.com/fortinet/ibm-fortigate-terraform-deploy/main/imgs/step_6_a.png)
 
+> You must also provide the resource group name.
 
 2. Apply the Plan.
 
