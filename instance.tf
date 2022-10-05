@@ -11,7 +11,7 @@ resource "ibm_is_volume" "logDisk" {
   name    = "${var.cluster_name}-logdisk-${random_string.random_suffix.result}"
   resource_group = data.ibm_resource_group.group.id
   profile = "10iops-tier"
-  encryption_key = var.logdisk_encryption_key_crn
+  encryption_key = var.logdisk_encryption_key
   zone    = var.zone1
 }
 
