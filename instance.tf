@@ -11,6 +11,7 @@ resource "ibm_is_volume" "logDisk" {
   name    = "${var.cluster_name}-logdisk-${random_string.random_suffix.result}"
   resource_group = data.ibm_resource_group.group.id
   profile = "10iops-tier"
+  encryption_key = var.logdisk_encryption_key_crn
   zone    = var.zone1
 }
 
@@ -36,6 +37,10 @@ resource "ibm_is_instance" "fgt1" {
     name            = "${var.cluster_name}-port2-${random_string.random_suffix.result}"
     subnet          = data.ibm_is_subnet.subnet2.id
     security_groups = [data.ibm_is_security_group.fgt_security_group.id]
+  }
+
+  boot_volume {
+    encryption = var.boot_encryption_key
   }
 
   volumes = [ibm_is_volume.logDisk.id]
