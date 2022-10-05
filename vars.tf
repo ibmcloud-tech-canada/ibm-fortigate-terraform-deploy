@@ -92,12 +92,12 @@ variable "user_data" {
   description = "The Custom Bootstrap Data file name."
 }
 
-var "boot_encryption_key" {
+variable "boot_encryption_key" {
   type = string
   description = "Key Protect or HPCS encryption key crn for encrypting the boot volume"
 }
 
-var "logdisk_encryption_key" {
+variable "logdisk_encryption_key" {
   type = string
   description = "Key Protect or HPCS encryption key crn for encrypting the log disk."
 }
